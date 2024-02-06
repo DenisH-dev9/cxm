@@ -7,12 +7,8 @@ import { NavLink } from 'react-router-dom'
 import { style } from '../../app/style';
 import ChangeColorMode from '../../components/changeColorMode';
 
-
-
 const GuestPage = () => {
   
-
-
   return (
     <Container 
       maxWidth="lg" 
@@ -58,6 +54,8 @@ const GuestPage = () => {
         </Card>
         <LoginForm />
        </Box>
+
+       
 
         <Typography 
           component="span" 
