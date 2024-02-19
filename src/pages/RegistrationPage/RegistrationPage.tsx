@@ -8,6 +8,9 @@ import ChangeColorMode from "../../components/changeColorMode";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useAppDispatch } from "../../app/hooks";
+import { registration } from "../../app/store/slice/auth";
+import { useNavigate } from "react-router-dom";
 
 const defaultProps = (option: any) => {
   const props = {
@@ -19,9 +22,11 @@ const defaultProps = (option: any) => {
 
 const RegistrationPage = () => {
 
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const [phoneNumber, setPhoneNumber] = React.useState('')
 
-  const handleChangePhoneNumber = (newValue: any) => {
+  const handleChangePhoneNumber = (newValue: string) => {
     setPhoneNumber(newValue)
   }
 
@@ -51,28 +56,35 @@ const RegistrationPage = () => {
     formState: {errors},
   } = useForm({mode:"onBlur", resolver: yupResolver(scheme)});
 
-  interface registrationData {
-    registerAs: string;
-    title: string;
-    firstName: string;
-    lastName: string;
-    countryOfResidence: string;
-    tel: string;
-    preferredLanguage: string;
+  interface RegistrationData {
+    // registerAs: string;
+    // title: string;
+    // firstName: string;
+    // lastName: string;
+    // countryOfResidence: string;
+    // tel: string;
+    // preferredLanguage: string;
     email: string;
     password: string;
-    repeatPassword: string;
-    checkbox1: boolean;
-    checkbox2: boolean;
-    checkbox3: boolean;
-    checkbox4: boolean;
-    checkbox5: boolean;
-    checkbox6: boolean;
-    checkbox7: boolean;
-    checkbox8: boolean;
+    // repeatPassword: string;
+    // checkbox1: boolean;
+    // checkbox2: boolean;
+    // checkbox3: boolean;
+    // checkbox4: boolean;
+    // checkbox5: boolean;
+    // checkbox6: boolean;
+    // checkbox7: boolean;
+    // checkbox8: boolean;
   }
-  const onSubmit = (data: any) => { 
-    console.log(data)
+  const onSubmit = (data: RegistrationData) => { 
+    console.log("onSubmit: ", data)
+    const newUser = {
+      email: data.email,
+      password: data.password
+    }
+
+    dispatch(registration(newUser))
+    navigate("/home")
   }
 
   return(

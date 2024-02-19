@@ -16,14 +16,12 @@ const testUser: User = {
 }
 
 const storedUsersString = localStorage.getItem("users");
-const storedUsers: User[] = storedUsersString ? JSON.parse(storedUsersString) : [];
-localStorage.setItem("users", JSON.stringify([testUser]));
+const storedUsers: User[] = storedUsersString ? JSON.parse(storedUsersString) : [testUser];
+
 
 const initialState: AuthState = {
   users: storedUsers,
 };
-
-
 
 export const authSlice = createSlice({
   name: "auth",
@@ -39,9 +37,22 @@ export const authSlice = createSlice({
         ),
       };
     },
+    registration(state, action) {
+      return {
+        ...state,
+        users: [
+          ...state.users, 
+          {
+            email: action.payload.email, 
+            password: action.payload.password,
+            isLogged: true
+          }
+        ]
+      };
+    },
   },
 });
 
-export const { login } = authSlice.actions;
+export const { login, registration } = authSlice.actions;
 
 export default authSlice.reducer;
