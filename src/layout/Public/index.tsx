@@ -1,13 +1,12 @@
-import { Box } from "@mui/material";
-import React, { lazy } from "react";
 import { Outlet } from "react-router-dom";
+import PublicLayoutWrapper from "../../components/wrappers/PublicLayoutWrapper";
 
 const PublicLayout = () => {
   
   return (
-    <Box>
+    <PublicLayoutWrapper>
       <Outlet />
-    </Box>
+    </PublicLayoutWrapper>
   )
 }
 
