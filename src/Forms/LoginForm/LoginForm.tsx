@@ -10,7 +10,6 @@ import { login } from "../../app/store/slice/auth";
 import { useNavigate } from "react-router-dom";
 import { style } from "../../app/style";
 
-
 const LoginForm = () => {
 
   const dispatch = useAppDispatch();
@@ -49,11 +48,9 @@ const LoginForm = () => {
     // console.log("user: ", user)
 
     dispatch(login(user))
-    navigate("/")
+    navigate("/home")
   }
 
-  
-  
   return (
     <Card 
       sx={style.signInCard}
@@ -136,7 +133,6 @@ const LoginForm = () => {
           </FormGroup>
           <Button 
             type="submit" 
-
           >
             Sign In
           </Button>

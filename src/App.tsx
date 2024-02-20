@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { BrowserRouter, Router, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import { useAuth } from "./app/hooks";
 import { authRoutes, mainRoutes } from "./Routers/router";
 
