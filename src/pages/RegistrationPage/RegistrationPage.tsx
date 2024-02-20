@@ -252,6 +252,12 @@ const RegistrationPage = () => {
             </Stack>
           </FormGroup>
           <Button type="submit">Register</Button>
+          <FormControlLabel
+            value="top"
+            control={<Link href="/auth" variant="body2">Sign in</Link>}
+            label="Already have an account? "
+            labelPlacement="start"
+          />
         </FormControl>
       </Card>
     </Container>
