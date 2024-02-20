@@ -5,10 +5,10 @@ import { VisibilityOff } from "@mui/icons-material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useAppDispatch } from "../../app/hooks";
-import { login } from "../../app/store/slice/auth";
+import { useAppDispatch } from "../app/hooks";
+import { login } from "../app/store/slice/auth";
 import { useNavigate } from "react-router-dom";
-import { style } from "../../app/style";
+import { style } from "../app/style";
 
 const LoginForm = () => {
 

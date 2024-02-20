@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Box, Card, CardContent, CardActions, Button, Typography } from '@mui/material';
-import LoginForm from '../../Forms/LoginForm/LoginForm';
+import LoginForm from '../../components/LoginForm';
 import { NavLink } from 'react-router-dom'
 import { style } from '../../app/style';
 
