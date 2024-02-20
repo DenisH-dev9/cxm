@@ -10,10 +10,14 @@ import { useAppDispatch } from "../../app/hooks";
 import { registration } from "../../app/store/slice/auth";
 import { useNavigate } from "react-router-dom";
 
-const defaultProps = (option: any) => {
+interface DefaultProps {
+  title:string;
+}
+
+const defaultProps = (option: DefaultProps[]) => {
   const props = {
     options: option,
-    getOptionLabel: (option: any) => option.title,
+    getOptionLabel: (option: DefaultProps) => option.title,
   };
   return props
 }
