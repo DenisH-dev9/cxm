@@ -1,34 +1,16 @@
-import React, { useContext } from 'react';
-import { Container, Box, Card, CardContent, CardActions, CardMedia, Button, Typography, IconButton, useTheme } from '@mui/material';
-import { DarkMode, LightMode } from '@mui/icons-material';
+import React from 'react';
+import { Container, Box, Card, CardContent, CardActions, Button, Typography } from '@mui/material';
 import LoginForm from '../../Forms/LoginForm/LoginForm';
-import LanguageSelect from '../../components/languageSelect';
 import { NavLink } from 'react-router-dom'
 import { style } from '../../app/style';
-import ChangeColorMode from '../../components/changeColorMode';
-
-
 
 const GuestPage = () => {
-  
-
 
   return (
     <Container 
       maxWidth="lg" 
       sx={style.GuestPageContainer}
     >
-      <Box 
-        sx={style.headerBox}
-      >
-        <CardMedia 
-          component="img" 
-          src="https://www.gotradehere.com/wp-content/uploads/2023/08/CXM-02-1024x423.png.webp"
-          sx={style.headerLogo}
-        />
-        <LanguageSelect />
-        <ChangeColorMode />
-       </Box>
         <Box 
           sx={style.GuestPageBodyBox}
         >

@@ -1,10 +1,8 @@
 import React from "react";
-import { Container, Box, CardMedia, Card, Typography, FormControl, FormGroup, Stack, Autocomplete, TextField, FormControlLabel, Checkbox, Link, Button } from "@mui/material";
-import LanguageSelect from "../../components/languageSelect";
+import { Container, Card, Typography, FormControl, FormGroup, Stack, Autocomplete, TextField, FormControlLabel, Checkbox, Link, Button } from "@mui/material";
 import { style } from "../../app/style"; 
 import { MuiTelInput } from 'mui-tel-input';
 import { iWantToRegisterAs, title, countryOfResidence, preferredLanguage } from "../../constants/registerInputOptions"; 
-import ChangeColorMode from "../../components/changeColorMode";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -80,19 +78,7 @@ const RegistrationPage = () => {
       maxWidth="lg" 
       sx={style.GuestPageContainer}
     >
-      <Box 
-        sx={style.headerBox}
-      >
-        <CardMedia 
-          component="img" 
-          src="https://www.gotradehere.com/wp-content/uploads/2023/08/CXM-02-1024x423.png.webp"
-          sx={style.headerLogo}
-        />
-        <LanguageSelect />
-        <ChangeColorMode />
-      </Box>
-      <Card 
-      >
+      <Card>
         <FormControl
           component="form" 
           onSubmit={handleSubmit(onSubmit)}
