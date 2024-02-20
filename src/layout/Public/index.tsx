@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import PublicLayoutWrapper from "../../components/wrappers/PublicLayoutWrapper";
+import PublicLayoutWrapper from "../wrappers/PublicLayoutWrapper";
 
 const PublicLayout = () => {
   

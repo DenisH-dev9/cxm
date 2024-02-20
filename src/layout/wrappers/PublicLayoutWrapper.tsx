@@ -1,10 +1,14 @@
 import { Box, CardMedia } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 import { style } from "../../app/style";
-import LanguageSelect from "../languageSelect";
-import ChangeColorMode from "../changeColorMode";
+import LanguageSelect from "../../components/languageSelect";
+import ChangeColorMode from "../../components/changeColorMode";
 
-const PublicLayoutWrapper = (props: any) => {
+interface Props {
+  children: ReactNode
+}
+
+const PublicLayoutWrapper = ({ children }: Props) => {
 
   return (
     <Box>
@@ -19,7 +23,9 @@ const PublicLayoutWrapper = (props: any) => {
         <LanguageSelect />
         <ChangeColorMode />
        </Box>
-      {props.children}
+
+      {children}
+      
     </Box>
   )
 }
