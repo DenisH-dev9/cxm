@@ -1,13 +1,13 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { IconButton, useTheme } from "@mui/material";
 import React, { useContext } from "react";
-import { ColorModeContext, tokens } from "../theme";
+import { ColorModeContext } from "../theme";
 
 const ChangeColorMode = () => {
 
   const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
-  const colorMode: any = useContext(ColorModeContext)
+  // const colors = tokens(theme.palette.mode)
+  const colorMode = useContext(ColorModeContext)
 
 
   return(
