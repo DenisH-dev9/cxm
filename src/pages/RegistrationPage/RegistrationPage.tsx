@@ -42,7 +42,8 @@ const RegistrationPage = () => {
     preferredLanguage: yup.string().required("Cant be blank"),
     email: yup.string().required("Email cant be blank").min(6,"Minimum 6 symbols"),
     password: yup.string().required("Password cant be blank").min(6,"Minimum 6 symbols"),
-    repeatPassword: yup.string().required("Cant be blank").min(6,"Minimum 6 symbols")
+    repeatPassword: yup.string()
+    .oneOf([yup.ref('password')], 'Passwords must match')
   })
   const {
     handleSubmit,
