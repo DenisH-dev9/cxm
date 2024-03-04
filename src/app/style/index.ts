@@ -1,4 +1,4 @@
-export const style = {
+export const style123 = {
 
   GuestPageContainer: { 
     display: 'flex', 

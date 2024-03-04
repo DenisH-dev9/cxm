@@ -8,7 +8,6 @@ import * as yup from "yup";
 import { useAppDispatch } from "../app/hooks";
 import { login } from "../app/store/slice/auth";
 import { useNavigate } from "react-router-dom";
-import { style } from "../app/style";
 
 const LoginForm = () => {
 
@@ -52,27 +51,17 @@ const LoginForm = () => {
   }
 
   return (
-    <Card 
-      sx={style.signInCard}
-    >
+    <Card>
       <FormControl 
         component="form" 
         onSubmit={handleSubmit(onSubmit)} 
-        sx={style.signInFormControl}
-      >
-        <FormGroup 
-          sx={style.signInFormGroup}
         >
-          <Typography 
-            variant="h4" 
-            sx={style.signInFormTitle}
-          >
+        <FormGroup>
+          <Typography variant="h4">
             Sign in
           </Typography>
           <Typography 
-            variant="body1" 
-            sx={style.signInFormInputLabel}
-          >
+            variant="body1">
             Email
           </Typography>
           <TextField 
@@ -82,16 +71,10 @@ const LoginForm = () => {
             placeholder="Example@email.com"
             variant="outlined"
           />
-          <Typography 
-            variant="body2" 
-            sx={style.signInInputError}
-          >
+          <Typography variant="body2">
               {errors.email?.message}
           </Typography>
-          <Typography 
-            variant="body1" 
-            sx={style.signInFormInputLabel}
-          >
+          <Typography variant="body1">
             Password
           </Typography>
             <OutlinedInput
@@ -113,19 +96,15 @@ const LoginForm = () => {
               }
               placeholder="Password"
             />
-            <Typography 
-              variant="body2" 
-              sx={style.signInInputError}
-            >
+            <Typography variant="body2">
               {errors.password?.message}
           </Typography>
-          <FormGroup row sx={style.signInOptionsFormGroup}>
+          <FormGroup row>
             <FormControlLabel
               value="Remember me"
               control={<Checkbox />}
               label="Remember me"
               labelPlacement="start"
-              sx={style.singInOptionsFormControlLabel}
             />
             <Typography>
               huihui

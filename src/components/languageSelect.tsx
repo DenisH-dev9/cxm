@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { languages } from '../constants/languages'; 
-import { style } from '../app/style'; 
 import { Box, Menu, MenuItem, List, ListItem, ListItemText, CardMedia, Typography } from '@mui/material'
 
 const LanguageSelect = () => {
@@ -34,9 +33,7 @@ const LanguageSelect = () => {
     <>
       <List
         component="nav"
-        aria-label="Device settings"
-        sx={style.listNav}
-      >
+        aria-label="Device settings">
           <ListItem
             button
             id="lock-button"
@@ -50,8 +47,8 @@ const LanguageSelect = () => {
               primary = {
                 languages.map((lang: Languages) => (
                   lang.id === selectedIndex 
-                  ? <Box key={lang.id} sx={style.listNavItem}>
-                      <CardMedia component="img" src={lang.flagIcons} sx={style.languagesCardMedia}/> 
+                  ? <Box key={lang.id}>
+                      <CardMedia component="img" src={lang.flagIcons}/> 
                       <Typography >{lang.options}</Typography>
                     </Box> 
                   : ''
@@ -77,7 +74,7 @@ const LanguageSelect = () => {
               onClick={(event) => handleMenuItemClick(event, lang.id)}
             >
               
-              <CardMedia component="img" src={lang.flagIcons} sx={style.languagesCardMedia}/>
+              <CardMedia component="img" src={lang.flagIcons}/>
               
               {lang.options}
             </MenuItem>
