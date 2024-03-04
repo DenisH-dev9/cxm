@@ -11,10 +11,11 @@ interface User {
 }
 interface AuthState {
   users: User[];
+  user: User[];
 }
 
 export const useAuth = () => {
-  const { users } = useAppSelector((state) => state.auth) as AuthState;
-  const isLogged = users.some(user => user.isLogged);
+  const { user } = useAppSelector((state) => state.auth) as AuthState;
+  const isLogged = user.some(user => user.isLogged);
   return isLogged;
 }

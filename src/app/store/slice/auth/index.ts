@@ -8,6 +8,7 @@ interface User {
 
 interface AuthState {
   users: User[];
+  user: User[];
 }
 const testUser: User = {
   email: "test123",
@@ -18,9 +19,14 @@ const testUser: User = {
 const storedUsersString = localStorage.getItem("users");
 const storedUsers: User[] = storedUsersString ? JSON.parse(storedUsersString) : [testUser];
 
+// localStorage.setItem("user", JSON.stringify(testUser))
+const storedUserString = localStorage.getItem("user");
+const storedUser: User[] = storedUserString ? JSON.parse(storedUserString) : [];
+
 
 const initialState: AuthState = {
   users: storedUsers,
+  user: storedUser
 };
 
 export const authSlice = createSlice({
@@ -30,11 +36,12 @@ export const authSlice = createSlice({
     login(state, action) {
       return {
         ...state,
-        users: state.users.map(user => 
+        user: state.users.map(user => 
           user.email === action.payload.email && user.password === action.payload.password
             ? { ...user, isLogged: true }
             : { ...user, isLogged: false }
         ),
+        
       };
     },
     registration(state, action) {
@@ -45,9 +52,14 @@ export const authSlice = createSlice({
           {
             email: action.payload.email, 
             password: action.payload.password,
-            isLogged: true
+            isLogged: false
           }
-        ]
+        ],
+        user: state.users.map(user => 
+          user.email === action.payload.email && user.password === action.payload.password
+            ? { ...user, isLogged: true }
+            : { ...user, isLogged: false }
+        ),
       };
     },
   },
