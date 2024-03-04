@@ -16,7 +16,7 @@ export const authRoutes = {
   exact: false,
   children: [
     {
-      path: '*',
+      path: '/',
       element: <Navigate to="/auth" />,
     },
     {
@@ -33,7 +33,7 @@ export const authRoutes = {
 export const mainRoutes = {
   path: '/home',
   element: <PrivateLayout />,
-  exact: false,
+  exact: true,
   children: [
     {
       path: '*',
